@@ -82,7 +82,10 @@ Oba APK są podpisane tym samym kluczem z `signing/` – dzięki temu kolejne we
 **Telefon**
 - *Pomijaj stałe powiadomienia* (domyślnie włączone) – odcina muzykę, nagrywanie w Stravie, nawigację, usługi w tle.
 - *Pomijaj ciche powiadomienia* – tylko te, które dzwonią/wibrują.
-- *Wykluczone aplikacje* – lista aplikacji, od których przyszło już cokolwiek; zaznacz te, których nie chcesz widzieć.
+- *Wybierz aplikacje…* – lista wszystkich zainstalowanych aplikacji z przełącznikiem „wysyłaj na Karoo” i wyszukiwarką. Dwa tryby:
+  - **Wszystkie oprócz wyłączonych** – nowe aplikacje są wysyłane automatycznie, wyłączasz tylko te, których nie chcesz,
+  - **Tylko wybrane** – na Karoo trafia wyłącznie to, co zaznaczysz (np. SMS, WhatsApp, telefon).
+  Aplikacje, które już wysłały jakieś powiadomienie, są na górze listy. Przyciski „Włącz/Wyłącz widoczne” działają na wyniki wyszukiwania.
 
 **Karoo**
 - *Pokazuj też wyskakujący baner* (domyślnie wyłączone) – dodatkowo krótki baner na 8 s.

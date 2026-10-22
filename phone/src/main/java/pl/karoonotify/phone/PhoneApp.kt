@@ -44,9 +44,32 @@ object Settings {
         get() = prefs.getBoolean("skip_silent", false)
         set(v) = prefs.edit().putBoolean("skip_silent", v).apply()
 
+    /** Tryb filtra aplikacji: false = wszystkie oprócz wykluczonych, true = tylko wybrane. */
+    var onlySelectedApps: Boolean
+        get() = prefs.getBoolean("only_selected", false)
+        set(v) = prefs.edit().putBoolean("only_selected", v).apply()
+
+    /** Tryb "wszystkie oprócz…": aplikacje, których NIE wysyłamy. */
     var excludedPackages: Set<String>
         get() = prefs.getStringSet("excluded", DEFAULT_EXCLUDED) ?: DEFAULT_EXCLUDED
         set(v) = prefs.edit().putStringSet("excluded", v).apply()
+
+    /** Tryb "tylko wybrane": aplikacje, które wysyłamy. */
+    var allowedPackages: Set<String>
+        get() = prefs.getStringSet("allowed", emptySet()) ?: emptySet()
+        set(v) = prefs.edit().putStringSet("allowed", v).apply()
+
+    /** Czy powiadomienia z tej aplikacji mają trafiać na Karoo (wg aktywnego trybu). */
+    fun isAppEnabled(pkg: String): Boolean =
+        if (onlySelectedApps) pkg in allowedPackages else pkg !in excludedPackages
+
+    fun setAppEnabled(pkg: String, enabled: Boolean) {
+        if (onlySelectedApps) {
+            allowedPackages = if (enabled) allowedPackages + pkg else allowedPackages - pkg
+        } else {
+            excludedPackages = if (enabled) excludedPackages - pkg else excludedPackages + pkg
+        }
+    }
 
     /** Aplikacje, od których przyszło już jakieś powiadomienie (do listy wykluczeń). */
     var seenPackages: Set<String>

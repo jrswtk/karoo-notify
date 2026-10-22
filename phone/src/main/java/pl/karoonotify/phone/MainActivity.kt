@@ -2,7 +2,6 @@ package pl.karoonotify.phone
 
 import android.Manifest
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -38,7 +37,7 @@ class MainActivity : Activity() {
         findViewById<Button>(R.id.btnListener).setOnClickListener { openListenerSettings() }
         findViewById<Button>(R.id.btnPermissions).setOnClickListener { requestRuntimePermissions() }
         findViewById<Button>(R.id.btnBattery).setOnClickListener { requestBatteryExemption() }
-        findViewById<Button>(R.id.btnExcluded).setOnClickListener { showExcludedDialog() }
+        findViewById<Button>(R.id.btnExcluded).setOnClickListener { startActivity(Intent(this, AppsActivity::class.java)) }
         findViewById<Button>(R.id.btnTest).setOnClickListener {
             NotificationHub.add(
                 PhoneNotification(
@@ -151,36 +150,6 @@ class MainActivity : Activity() {
         } catch (e: Exception) {
             startActivity(Intent(SysSettings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS))
         }
-    }
-
-    private fun showExcludedDialog() {
-        val pm = packageManager
-        val packages = (Settings.seenPackages + Settings.excludedPackages)
-            .filter { it != packageName }
-            .map { pkg ->
-                val label = try {
-                    pm.getApplicationLabel(pm.getApplicationInfo(pkg, 0)).toString()
-                } catch (e: Exception) { pkg }
-                pkg to label
-            }
-            .sortedBy { it.second.lowercase() }
-        if (packages.isEmpty()) {
-            AlertDialog.Builder(this).setMessage(R.string.excluded_empty).setPositiveButton(android.R.string.ok, null).show()
-            return
-        }
-        val excluded = Settings.excludedPackages.toMutableSet()
-        val checked = BooleanArray(packages.size) { packages[it].first in excluded }
-        AlertDialog.Builder(this)
-            .setTitle(R.string.btn_excluded)
-            .setMultiChoiceItems(packages.map { it.second }.toTypedArray(), checked) { _, which, isChecked ->
-                if (isChecked) excluded += packages[which].first else excluded -= packages[which].first
-            }
-            .setPositiveButton(android.R.string.ok) { _, _ ->
-                Settings.excludedPackages = excluded
-                filtersChanged()
-            }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
     }
 
     private fun filtersChanged() {

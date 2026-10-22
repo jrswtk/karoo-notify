@@ -51,7 +51,7 @@ class NotificationCatcher : NotificationListenerService() {
         val n = sbn.notification ?: return null
 
         rememberSeen(pkg)
-        if (pkg in Settings.excludedPackages) return null
+        if (!Settings.isAppEnabled(pkg)) return null
         if (n.flags and Notification.FLAG_GROUP_SUMMARY != 0) return null
         if (Settings.skipOngoing && (sbn.isOngoing || n.flags and Notification.FLAG_FOREGROUND_SERVICE != 0)) return null
         if (Settings.skipSilent && isSilent(sbn)) return null
