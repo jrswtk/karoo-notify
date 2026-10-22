@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Karoo Notify</string>
+    <string name="phone_id">ID telefonu: %1$s</string>
+
+    <string name="section_setup">KONFIGURACJA</string>
+    <string name="section_options">OPCJE</string>
+
+    <string name="btn_listener">1. Nadaj dostęp do powiadomień</string>
+    <string name="hint_restricted">Jeśli przełącznik jest wyszarzony: Ustawienia → Aplikacje → Karoo Notify → ⋮ (prawy górny róg) → „Zezwalaj na ustawienia z ograniczeniami”, potem spróbuj ponownie.</string>
+    <string name="btn_permissions">2. Nadaj uprawnienia Bluetooth</string>
+    <string name="btn_battery">3. Wyłącz optymalizację baterii</string>
+
+    <string name="sw_bridge">Wysyłaj powiadomienia do Karoo</string>
+    <string name="sw_ongoing">Pomijaj stałe powiadomienia (muzyka, Strava, nawigacja)</string>
+    <string name="sw_silent">Pomijaj ciche powiadomienia</string>
+    <string name="btn_excluded">Wykluczone aplikacje…</string>
+    <string name="excluded_empty">Lista pojawi się, gdy przyjdą pierwsze powiadomienia.</string>
+    <string name="btn_test">Wyślij testowe powiadomienie</string>
+    <string name="test_title">Test Karoo Notify</string>
+    <string name="test_text">Jeśli to widzisz na Karoo, wszystko działa 🚴</string>
+
+    <string name="st_listener">Dostęp do powiadomień</string>
+    <string name="st_permissions">Uprawnienia Bluetooth</string>
+    <string name="st_battery">Bez optymalizacji baterii</string>
+    <string name="st_bridge">Mostek BLE działa</string>
+    <string name="st_karoo_connected">Karoo połączone (%1$d)</string>
+    <string name="st_karoo_waiting">Czekam na Karoo…</string>
+    <string name="st_items">Powiadomień w kolejce: %1$d</string>
+    <string name="st_last_sent">Ostatnio wysłano: %1$s</string>
+
+    <string name="channel_name">Połączenie z Karoo</string>
+    <string name="fg_waiting">Czekam na połączenie z Karoo</string>
+    <string name="fg_connected">Połączono z Karoo</string>
+    <string name="fg_bt_off">Bluetooth jest wyłączony</string>
+    <string name="fg_no_permission">Brak uprawnień Bluetooth – otwórz aplikację</string>
+    <string name="fg_adv_failed">Błąd rozgłaszania BLE (%1$d)</string>
+</resources>

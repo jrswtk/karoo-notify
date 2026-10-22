@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Karoo Notify</string>
+    <string name="field_name">Powiadomienia</string>
+    <string name="field_description">Powiadomienia z telefonu (aplikacja Karoo Notify)</string>
+    <string name="action_clear">Wyczyść powiadomienia</string>
+
+    <string name="header_count">Powiadomienia (%1$d)</string>
+    <string name="no_notifications">Brak powiadomień</string>
+    <string name="status_searching">szukam telefonu…</string>
+    <string name="status_connecting">łączenie…</string>
+    <string name="status_bt_off">Bluetooth wyłączony</string>
+    <string name="status_no_permission">otwórz Karoo Notify</string>
+    <string name="time_now">teraz</string>
+    <string name="time_minutes">%1$d min</string>
+
+    <string name="btn_permissions">Nadaj uprawnienia Bluetooth</string>
+    <string name="btn_forget">Zapomnij telefon</string>
+    <string name="btn_clear">Wyczyść listę</string>
+    <string name="sw_popup">Pokazuj też wyskakujący baner</string>
+    <string name="sw_remove">Usuwaj odrzucone na telefonie</string>
+    <string name="paired">Sparowany telefon: %1$s</string>
+    <string name="paired_none">Sparowany telefon: brak (połączę z pierwszym znalezionym)</string>
+    <string name="link_connected">Połączono z: %1$s</string>
+    <string name="link_searching">Szukam telefonu…</string>
+    <string name="link_connecting">Łączenie z telefonem…</string>
+    <string name="link_bt_off">Bluetooth jest wyłączony</string>
+    <string name="link_no_permission">Brak uprawnień Bluetooth</string>
+    <string name="howto">Dodaj pole: Profile → profil → strona danych → dodaj pole → Karoo Notify → Powiadomienia. Im większe pole, tym więcej powiadomień się zmieści.</string>
+</resources>

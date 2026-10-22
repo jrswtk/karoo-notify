@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionInfo
+    displayName="@string/app_name"
+    icon="@drawable/ic_bell"
+    id="karoo-notify"
+    scansDevices="false">
+    <DataType
+        description="@string/field_description"
+        displayName="@string/field_name"
+        graphical="true"
+        icon="@drawable/ic_bell"
+        typeId="notifications" />
+    <BonusAction
+        displayName="@string/action_clear"
+        actionId="clear" />
+</ExtensionInfo>
